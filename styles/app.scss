@@ -1,0 +1,41 @@
+:root {
+  --headerHeight: 3rem;
+
+  --first-hue: 250;
+  --sat: 66%;
+  --lig: 75%;
+  --second-hue: 219;
+  --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
+  --first-color-alt: hsl(var(--first-hue), var(--sat), 71%); /* -4% */
+  --text-color-light: hsl(var(--second-hue), 4%, 55%);
+
+  // dark
+  --title-color: hsl(var(--second-hue), 15%, 95%);
+  --text-color: hsl(var(--second-hue), 8%, 75%);
+  --body-color: hsl(var(--second-hue), 48%, 8%);
+  --container-color: hsl(var(--second-hue), 32%, 12%);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+.light {
+  --title-color: hsl(var(--second-hue), 15%, 25%);
+  --text-color: hsl(var(--second-hue), 8%, 50%);
+  --body-color: hsl(var(--second-hue), 100%, 99%);
+  --container-color: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+@import "./app/mixin";
+@import "./app/reset";
+@import "./app/font";
+@import "./app/reuseable";
+@import "./app/header";
+@import "./app/navbar";
+@import "./app/home";
+@import "./app/about";
+@import "./app/experience";
+@import "./app/services";
+@import "./app/work";
+@import "./app/testimonial";
+@import "./app/contact";
+@import "./app/footer";

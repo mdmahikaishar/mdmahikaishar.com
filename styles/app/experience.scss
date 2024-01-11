@@ -1,0 +1,94 @@
+.experience {
+  &Container {
+    display: flex;
+    justify-content: center;
+  }
+  &Content {
+    max-width: 50rem;
+    width: max-content;
+    display: grid;
+    grid-template: auto / repeat(1, 1fr);
+    gap: 1.5rem;
+    cursor: default;
+  }
+
+  &Card {
+    max-width: 25rem;
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--container-color);
+    color: var(--title-color);
+    border-radius: 0.5rem;
+    @include shadow();
+    transition: scale 200ms ease;
+    cursor: default;
+
+    &Title {
+      width: 100%;
+
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--first-color);
+    }
+    &Short {
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-color-light);
+    }
+    &List {
+      display: grid;
+      grid-template: auto / repeat(2, 1fr);
+      color: var(--text-color);
+      gap: 1rem;
+    }
+    &Item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    &Icon {
+      width: 1.5rem;
+      aspect-ratio: 1/1;
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+      color: var(--first-color);
+    }
+  }
+  @include mobile() {
+    &Content {
+      gap: 1rem;
+    }
+
+    &Card {
+      &Title {
+        margin-bottom: 1rem;
+      }
+      &List {
+        grid-template: auto / repeat(1, 1fr);
+      }
+      &Short {
+        font-size: 0.8rem;
+      }
+      &Icon {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  @include laptop() {
+    &Content {
+      width: 100%;
+      grid-template: auto / repeat(2, 1fr);
+      gap: 2rem;
+    }
+    &Card {
+      &Title {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

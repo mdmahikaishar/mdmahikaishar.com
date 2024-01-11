@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#app {
+  font-family: Poppins, sans-serif;
+  background-color: var(--body-color);
+}
+body {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: var(--text-color);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--text-color-light);
+    border-radius: 0.5rem;
+    transition: background-color 200ms ease;
+
+    &:hover {
+      background-color: #777;
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+}

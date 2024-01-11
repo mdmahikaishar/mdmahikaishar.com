@@ -1,0 +1,104 @@
+.about {
+  &Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &Img {
+    &Container {
+      max-height: 20rem;
+      height: 40vh;
+      aspect-ratio: 1 / 1;
+      border-radius: 1rem;
+      @include shadow();
+    }
+  }
+
+  &Text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  &Card {
+    &Container {
+      display: grid;
+      grid-template: auto / repeat(3, 1fr);
+      grid-gap: 1.5rem;
+    }
+
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    background-color: var(--container-color);
+    border-radius: 0.5rem;
+    @include shadow();
+    cursor: default;
+
+    &Icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--title-color);
+      transition: scale 200ms ease;
+    }
+    &Name {
+      font-size: 1rem;
+      color: var(--title-color);
+    }
+    &Time {
+      font-size: 0.8rem;
+      color: var(--text-color-light);
+    }
+
+    &:hover {
+      .aboutCardIcon {
+        scale: 1.2;
+      }
+    }
+  }
+  &Describtion {
+    max-width: 50ch;
+    text-align: center;
+    color: var(--text-color);
+    cursor: default;
+  }
+
+  @include mobile() {
+    &Card {
+      &Container {
+        grid-template: auto / repeat(2, 1fr);
+        gap: 1rem;
+      }
+      &Icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      &Name {
+        font-size: 0.8rem;
+      }
+      &Time {
+        font-size: 0.8rem;
+      }
+    }
+    &Describtion {
+      max-width: 35ch;
+      font-size: 0.9rem;
+    }
+  }
+
+  @include laptop() {
+    &Container {
+      gap: 4rem;
+    }
+    &Card {
+      &Container {
+        grid-gap: 1.5rem;
+      }
+    }
+  }
+}

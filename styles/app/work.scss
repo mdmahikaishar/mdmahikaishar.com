@@ -1,0 +1,109 @@
+.work {
+  &Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &Tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &Button {
+      padding: 0.3rem 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background-color: transparent;
+      color: var(--text-color);
+      border: none;
+      border-radius: 0.5rem;
+      transition: background-color 200ms ease, color 200ms ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--first-color);
+        color: var(--container-color);
+        @include shadow();
+      }
+    }
+
+    &Active {
+      background-color: var(--first-color);
+      color: var(--container-color);
+      @include shadow();
+    }
+  }
+
+  &Content {
+    display: grid;
+    grid-template: auto / repeat(1, 1fr);
+    gap: 1rem;
+    cursor: default;
+  }
+  &Card {
+    max-width: 25rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--container-color);
+    border-radius: 0.5rem;
+    @include shadow();
+    transition: scale 200ms ease;
+
+    &Img {
+      width: 100%;
+      aspect-ratio: 5 / 3;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    &Name {
+      margin-top: 1rem;
+      color: var(--title-color);
+    }
+    &Link {
+      width: fit-content;
+      margin-top: 0.25rem;
+      font-size: 0.9rem;
+      color: var(--text-color-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    &Icon {
+      transition: margin-left 200ms ease;
+    }
+
+    &:hover {
+      .workCardLink {
+        color: var(--first-color);
+      }
+      .workCardIcon {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+  @include mobile() {
+    &Tab {
+      gap: 0.25rem;
+      &Button {
+        padding: 0.25rem 0.5rem;
+      }
+    }
+  }
+
+  @include laptop() {
+    &Tab {
+      &Button {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    &Content {
+      max-width: 40rem;
+      grid-template: auto / repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+}

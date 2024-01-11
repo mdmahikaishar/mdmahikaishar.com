@@ -1,0 +1,80 @@
+.footer {
+  padding-bottom: 6rem;
+  background-color: var(--first-color);
+  color: var(--container-color);
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &Logo {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  &Link {
+    &Container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    font-size: 1rem;
+    transition: color 200ms ease;
+
+    &:hover {
+      color: var(--title-color);
+    }
+  }
+
+  &Social {
+    &Container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 200ms ease, color 200ms ease;
+    background-color: var(--container-color);
+    color: var(--text-color);
+
+    &:hover {
+      background-color: var(--title-color);
+      color: var(--first-color-alt);
+    }
+  }
+
+  &Copyright {
+    font-size: 0.9rem;
+    color: var(--body-color);
+  }
+
+  @include mobile() {
+    &Logo {
+      font-size: 1.5rem;
+    }
+    &Link {
+      &Container {
+        gap: 0.5rem;
+      }
+
+      font-size: 0.8rem;
+    }
+    &Social {
+      &Container {
+        gap: 0.5rem;
+      }
+    }
+    &Copyright {
+      font-size: 0.8rem;
+    }
+  }
+}

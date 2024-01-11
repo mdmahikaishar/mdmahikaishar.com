@@ -1,0 +1,118 @@
+.service {
+  &Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &Content {
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+    grid-gap: 1.5rem;
+  }
+
+  &Card {
+    padding: 4rem 2rem 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--container-color);
+    border-radius: 1rem;
+    @include shadow();
+    cursor: default;
+
+    &Name {
+      color: var(--title-color);
+    }
+    &Link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-color-light);
+      transition: color 200ms ease;
+    }
+    &Arrow {
+      font-size: 0.8rem;
+      transition: margin-left 200ms ease;
+    }
+
+    &:hover {
+      .serviceCardLink {
+        color: var(--first-color);
+      }
+      .serviceCardArrow {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  &Modal {
+    text-align: center;
+    color: var(--text-color);
+    cursor: default;
+
+    &Title {
+      margin-bottom: 1rem;
+      color: var(--first-color);
+    }
+    &Describtion {
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-color-light);
+    }
+    &List {
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: var(--text-color);
+      gap: 0.5rem;
+    }
+    &Icon {
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--first-color);
+    }
+  }
+
+  @include mobile() {
+    &Content {
+      grid-template: auto / repeat(1, 1fr);
+      gap: 1rem;
+    }
+
+    &Card {
+      &Link {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    &Modal {
+      &Title {
+        font-size: 1.15rem;
+      }
+      &List {
+        padding-left: 0.5rem;
+        font-size: 0.9rem;
+      }
+      &Icon {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  @include laptop() {
+    &Content {
+      grid-template: auto / repeat(3, 1fr);
+      gap: 2rem;
+    }
+    &Card {
+      padding-top: 5rem;
+
+      &Name {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

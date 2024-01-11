@@ -1,0 +1,50 @@
+.nav {
+  &Container {
+    padding: 0.5rem 1.5rem;
+    width: fit-content;
+    position: fixed;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    display: flex;
+    align-content: center;
+    gap: 0.5rem;
+    background-color: var(--container-color);
+    border-radius: 5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+      inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+    transition: width 200ms ease;
+    z-index: 1;
+  }
+
+  &Link {
+    width: 2rem;
+    aspect-ratio: 1 /1;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border-radius: 50%;
+    color: var(--text-color);
+    outline: none;
+    border: none;
+    transition: background-color 200ms ease, box-shadow 200ms ease;
+
+    &Active,
+    &:hover {
+      background-color: var(--first-color);
+      color: var(--title-color);
+      box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  @include laptop() {
+    &Container {
+      padding: 0.75rem 2rem;
+    }
+
+    &Link {
+      width: 2.5rem;
+      font-size: 1.25rem;
+    }
+  }
+}
