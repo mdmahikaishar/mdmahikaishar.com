@@ -9,7 +9,7 @@ export interface IExperienceItem {
   id: string;
   name: string;
   short: string;
-  index: number,
+  index?: number,
 }
 
 export default function ExperienceCardItem({ name, short }: IExperienceItem) {
