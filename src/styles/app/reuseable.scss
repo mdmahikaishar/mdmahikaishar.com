@@ -1,0 +1,83 @@
+.container {
+  max-width: 900px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mobile() {
+    width: 90%;
+  }
+}
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+
+  &Subtitle {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+  }
+  &Title {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: var(--first-color);
+  }
+
+  &Subtitle,
+  &Title {
+    text-align: center;
+    cursor: default;
+  }
+
+  @include mobile() {
+    &Subtitle {
+      font-size: 0.8rem;
+    }
+    &Title {
+      font-size: 1.25rem;
+    }
+  }
+
+  @include laptop() {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+
+    &Title {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: var(--first-color);
+  border: 0.15rem solid var(--first-color);
+  color: var(--container-color);
+  border-radius: 0.5rem;
+  @include shadow();
+  transition: background-color 200ms ease, color 200ms ease;
+
+  &:hover {
+    background-color: var(--container-color);
+    color: var(--first-color);
+  }
+
+  &Outline {
+    background-color: var(--container-color);
+    border-color: var(--first-color);
+    color: var(--first-color);
+
+    &:hover {
+      background-color: var(--first-color);
+      color: var(--container-color);
+    }
+  }
+
+  @include mobile() {
+    // padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

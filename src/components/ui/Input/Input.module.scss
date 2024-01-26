@@ -1,0 +1,45 @@
+@import "../../../styles/app/_mixin.scss";
+
+.input {
+  &Field {
+    padding: 0.5rem 1rem;
+    position: relative;
+    border-radius: 0.5rem;
+    border: 0.15rem solid var(--text-color-light);
+    transition: border-color 200ms ease;
+    @include shadow();
+
+    &:focus-within,
+    &:hover {
+      border-color: var(--first-color);
+      .inputLabel {
+        color: var(--first-color);
+      }
+    }
+  }
+  &Label {
+    padding: 0 0.25rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    background-color: var(--body-color);
+    transform: translateY(-50%);
+    transition: color 200ms ease;
+  }
+  // &Input {}
+  &Textarea {
+    padding-top: 0.25rem;
+    resize: none;
+    width: 100%;
+  }
+  &Input,
+  &Textarea {
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    border: none;
+  }
+}

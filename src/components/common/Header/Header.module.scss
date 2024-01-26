@@ -1,0 +1,33 @@
+@import "../../../styles/app/_mixin.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--body-color);
+  box-shadow: 0px 2px 5px var(--shadow-color);
+  z-index: 1;
+}
+
+.container {
+  height: var(--headerHeight);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  @include mobile() {
+    &Button {
+      width: 1.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}

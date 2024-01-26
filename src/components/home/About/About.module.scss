@@ -1,0 +1,107 @@
+@import "../../../styles/app/_mixin.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.img {
+  &Container {
+    max-height: 20rem;
+    height: 40vh;
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    @include shadow();
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card {
+  &Container {
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    grid-gap: 1.5rem;
+  }
+
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  background-color: var(--container-color);
+  border-radius: 0.5rem;
+  @include shadow();
+  cursor: pointer;
+
+  &Icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--title-color);
+  }
+
+  &Name {
+    font-size: 1rem;
+    color: var(--title-color);
+  }
+
+  &Time {
+    font-size: 0.8rem;
+    color: var(--text-color-light);
+  }
+}
+
+.describtion {
+  max-width: 50ch;
+  text-align: center;
+  color: var(--text-color);
+  cursor: default;
+}
+
+@include mobile() {
+  .card {
+    &Container {
+      grid-template: auto / repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    &Icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &Name {
+      font-size: 0.8rem;
+    }
+
+    &Time {
+      font-size: 0.8rem;
+    }
+  }
+
+  .describtion {
+    max-width: 35ch;
+    font-size: 0.9rem;
+  }
+}
+
+@include laptop() {
+  .container {
+    gap: 4rem;
+  }
+
+  .card {
+
+    &Container {
+      grid-gap: 1.5rem;
+    }
+  }
+}

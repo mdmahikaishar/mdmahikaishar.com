@@ -1,0 +1,17 @@
+@mixin mobile {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin shadow {
+  // box-shadow: 2px 2px 10px var(--shadow-color);
+  box-shadow: 2px 2px 10px var(--shadow-color),
+        inset 2px 2px 10px var(--shadow-color);
+}
